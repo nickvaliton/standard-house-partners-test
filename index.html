@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standard House Partners — Visual Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500;1,8..60,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ===== TOKENS ===== */
+  :root {
+    --ink: #0A0A0A;
+    --ink-soft: #1A1A1A;
+    --red: #8B2E2E;
+    --red-light: #C95252;
+    --red-deep: #6B1F1F;
+    --ivory: #F5F1E8;
+    --ivory-soft: #FAF7F0;
+    --paper: #FFFFFF;
+    --rule: #3A3A3A;
+    --line: #C9C2B0;
+    --line-soft: #E2DCC9;
+    --mute: #6B6457;
+    --mute-soft: #948C7C;
+    --risk-low: #5C6B73;
+    --risk-mod: #B8893D;
+    --risk-high: #8B2E2E;
+    --risk-crit: #6B1F1F;
+
+    --display: 'Source Serif 4', 'Times New Roman', Georgia, serif;
+    --body: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E2D0;
+    font-family: var(--body);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body { padding: 40px 20px 80px; }
+
+  /* ===== PAGE ===== */
+  .page {
+    max-width: 920px;
+    margin: 0 auto 32px;
+    background: var(--paper);
+    padding: 72px 80px 64px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+    position: relative;
+    min-height: 1100px;
+  }
+  .page:last-child { margin-bottom: 0; }
+  .page-ivory { background: var(--ivory); }
+
+  /* ===== TYPOGRAPHY ===== */
+  h1, h2, h3, p, ul, li { margin: 0; padding: 0; }
+  ul { list-style: none; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .eyebrow-ink {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .section-title {
+    font-family: var(--display);
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    margin: 14px 0 24px;
+  }
+  .section-title .em { font-style: italic; }
+  .section-title .red { color: var(--red); }
+
+  .body-text {
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 660px;
+    margin-bottom: 16px;
+  }
+
+  .body-text em { font-style: italic; }
+
+  .caption {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--mute);
+    margin-top: 14px;
+    letter-spacing: 0.02em;
+    max-width: 720px;
+  }
+
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .mt-32 { margin-top: 32px; }
+  .mt-48 { margin-top: 48px; }
+  .text-center { text-align: center; }
+
+  .rule-faint {
+    border: none;
+    border-top: 0.5px solid var(--line);
+    margin: 24px 0;
+  }
+  .rule-double {
+    border: none;
+    border-top: 1.5px solid var(--ink);
+    border-bottom: 0.5px solid var(--ink);
+    height: 4px;
+    margin: 24px 0;
+  }
+
+  /* ===== COVER ===== */
+  .cover {
+    background: var(--ivory);
+    padding: 72px 80px 64px;
+    display: flex;
+    flex-direction: column;
+    min-height: 1100px;
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .cover-thin-rule {
+    height: 0.5px;
+    background: var(--ink);
+    margin-top: 4px;
+  }
+
+  .cover-footer-block {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  .cover-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0;
+  }
+
+  .cover-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+
+  .cover-title {
+    font-family: var(--display);
+    font-size: 92px;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .cover-subtitle {
+    font-family: var(--display);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.012em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--ink);
+    margin: 28px auto;
+  }
+
+  .cover-tagline {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .cover-footer {
+    padding-top: 18px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  /* ===== TABLE OF CONTENTS ===== */
+  .toc-list {
+    margin-top: 32px;
+  }
+
+  .toc-item {
+    display: grid;
+    grid-template-columns: 60px 260px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--line);
+  }
+
+  .toc-num {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: 0.06em;
+  }
+
+  .toc-name {
+    font-family: var(--display);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .toc-desc {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--mute);
+  }
+
+  /* ===== WORDMARK STAGES ===== */
+  .wm-stage {
+    background: var(--ivory);
+    padding: 72px 56px;
+    margin-top: 28px;
+    border: 0.5px solid var(--line);
+    text-align: center;
+  }
+
+  .wm-stage.compact {
+    padding: 44px 56px;
+  }
+
+  .wm-stage.dark {
+    background: var(--ink);
+  }
+
+  .wm-stage.paper {
+    background: var(--paper);
+  }
+
+  .wm-label {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 32px;
+  }
+
+  .wm-label.light {
+    color: var(--ivory);
+    opacity: 0.55;
+  }
+
+  .wm-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+
+  .wm-size-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--mute);
+    margin-top: 14px;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  /* ===== COLOR PALETTE ===== */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .swatch {
+    background: var(--paper);
+    border: 0.5px solid var(--line);
+  }
+
+  .swatch-color {
+    height: 130px;
+    position: relative;
+  }
+
+  .swatch-meta {
+    padding: 14px 16px 16px;
+    border-top: 0.5px solid var(--line);
+  }
+
+  .swatch-name {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .swatch-role {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 8px;
+  }
+
+  .swatch-hex {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== TYPOGRAPHY SPECIMEN ===== */
+  .spec-row {
+    padding: 28px 0;
+    border-bottom: 0.5px solid var(--line);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    align-items: baseline;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+
+  .spec-meta {
+    font-family: var(--sans);
+    font-size: 10px;
+    color: var(--mute);
+    line-height: 1.7;
+  }
+
+  .spec-meta .role {
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .spec-meta .face {
+    font-family: var(--display);
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+
+  .spec-display {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    line-height: 1.05;
+  }
+
+  .spec-display .italic { font-style: italic; }
+
+  .spec-body {
+    font-family: var(--display);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  .spec-body .drop {
+    float: left;
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 0.85;
+    font-weight: 400;
+    color: var(--red);
+    padding-right: 8px;
+    padding-top: 4px;
+  }
+
+  .spec-caption {
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 520px;
+    font-weight: 400;
+  }
+
+  .spec-caption .uc {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ===== REPORT COVER MOCKUP ===== */
+  .mock-stage {
+    background: #E8E2D0;
+    padding: 56px 48px;
+    border: 0.5px solid var(--line);
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  .report-cover {
+    width: 460px;
+    background: var(--ivory);
+    padding: 48px 52px 42px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.08),
+      0 12px 32px rgba(0,0,0,0.10),
+      0 24px 64px rgba(0,0,0,0.06);
+    aspect-ratio: 8.5 / 11;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .rc-mast {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+
+  .rc-mast-name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.3px;
+  }
+
+  .rc-mast-name .red { color: var(--red); }
+
+  .rc-mast-meta {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    padding-top: 4px;
+  }
+
+  .rc-thin {
+    height: 0.5px;
+    background: var(--ink);
+    margin-top: 3px;
+  }
+
+  .rc-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px 0;
+  }
+
+  .rc-kicker {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+
+  .rc-title {
+    font-family: var(--display);
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.008em;
+    margin-bottom: 18px;
+  }
+
+  .rc-title .italic { font-style: italic; }
+
+  .rc-subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    margin-bottom: 22px;
+  }
+
+  .rc-rule {
+    width: 44px;
+    height: 1.5px;
+    background: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .rc-meta {
+    font-family: var(--sans);
+    font-size: 10px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .rc-meta .label {
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    display: inline-block;
+    min-width: 96px;
+    margin-right: 8px;
+  }
+
+  .rc-bottom {
+    padding-top: 12px;
+    border-top: 1.5px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .rc-bottom-left {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink);
+  }
+
+  .rc-bottom-right {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* ===== STATIONERY MOCKUP ===== */
+  .card-stage {
+    background: #E8E2D0;
+    padding: 44px 36px;
+    border: 0.5px solid var(--line);
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .bcard {
+    width: 320px;
+    height: 184px;
+    padding: 22px 24px;
+    background: var(--ivory);
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.08),
+      0 8px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .bcard.dark { background: var(--ink); }
+
+  /* ===== WEBSITE HERO MOCKUP ===== */
+  .web-stage {
+    background: var(--paper);
+    border: 0.5px solid var(--line);
+    margin-top: 28px;
+    overflow: hidden;
+  }
+
+  .web-browser {
+    background: var(--ivory);
+    padding: 10px 14px;
+    border-bottom: 0.5px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .web-dots { display: flex; gap: 5px; }
+  .web-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+  .web-url {
+    flex: 1;
+    background: var(--paper);
+    border: 0.5px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--mute);
+    text-align: center;
+    margin-left: 14px;
+  }
+
+  .web-page { background: var(--ivory); }
+
+  .web-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 40px 20px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+
+  .web-brand {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+    line-height: 1;
+  }
+
+  .web-brand .red { color: var(--red); }
+
+  .web-menu {
+    display: flex;
+    gap: 32px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .web-cta {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    background: var(--ink);
+    padding: 8px 16px;
+    border: 0;
+  }
+
+  .web-hero {
+    padding: 72px 40px 56px;
+    max-width: 760px;
+  }
+
+  .web-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 18px;
+  }
+
+  .web-headline {
+    font-family: var(--display);
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 22px;
+    max-width: 640px;
+  }
+
+  .web-headline .italic { font-style: italic; }
+
+  .web-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin-bottom: 32px;
+  }
+
+  .web-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .web-btn-primary {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    background: var(--ink);
+    padding: 14px 24px;
+    border: 0;
+  }
+
+  .web-btn-secondary {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 14px 0;
+    border-bottom: 1.5px solid var(--ink);
+  }
+
+  /* ===== EMAIL SIGNATURE ===== */
+  .sig-stage {
+    background: var(--paper);
+    border: 0.5px solid var(--line);
+    padding: 40px 36px;
+    margin-top: 28px;
+    max-width: 620px;
+  }
+
+  .sig {
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .sig-name {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .sig-title {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 1px;
+  }
+
+  .sig-rule {
+    width: 32px;
+    height: 1.5px;
+    background: var(--red);
+    margin: 12px 0;
+  }
+
+  .sig-firm {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+
+  .sig-firm .red { color: var(--red); }
+
+  .sig-contact {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .sig-tag {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--mute);
+    margin-top: 10px;
+  }
+
+  /* ===== NEWSLETTER MASTHEAD ===== */
+  .nl-stage {
+    background: var(--ivory);
+    padding: 48px 56px 56px;
+    margin-top: 28px;
+    border: 0.5px solid var(--line);
+  }
+
+  .nl-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+
+  .nl-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .nl-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink);
+    letter-spacing: 0.08em;
+  }
+
+  .nl-thin {
+    height: 0.5px;
+    background: var(--ink);
+    margin-top: 3px;
+  }
+
+  .nl-title {
+    font-family: var(--display);
+    font-size: 88px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.018em;
+    margin-top: 36px;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .nl-title .italic { font-style: italic; }
+
+  .nl-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--mute);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .nl-rule {
+    border: none;
+    border-top: 0.5px solid var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    height: 3px;
+    margin: 0 0 32px;
+  }
+
+  .nl-deck {
+    font-family: var(--display);
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--ink);
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* ===== SUMMARY ===== */
+  .summary-box {
+    background: var(--ivory);
+    padding: 40px 44px;
+    border: 0.5px solid var(--line);
+  }
+
+  .summary-body {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 640px;
+    margin-bottom: 32px;
+  }
+
+  .summary-footer {
+    padding-top: 24px;
+    border-top: 0.5px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .summary-meta {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; min-height: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================== COVER ============================== -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="cover-footer-block">
+      Standard House Partners<br>
+      Boston · Massachusetts
+    </div>
+    <div class="cover-footer-block" style="text-align: right;">
+      Visual Direction<br>
+      Version 1.0 · May 2026
+    </div>
+  </div>
+  <div class="cover-thin-rule"></div>
+
+  <div class="cover-middle">
+    <div class="cover-eyebrow">Brand Identity Document</div>
+    <div class="cover-title">Standard House</div>
+    <div class="cover-subtitle">Partners</div>
+    <div class="cover-divider"></div>
+    <div class="cover-tagline">The standard, applied.</div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-footer-block">
+      Confidential<br>
+      Internal Working Document
+    </div>
+    <div class="cover-footer-block" style="text-align: right;">
+      No. 0001<br>
+      Marketing Diligence
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TABLE OF CONTENTS ============================== -->
+<section class="page">
+  <div class="eyebrow">Contents</div>
+  <h1 class="section-title">What's in this document.</h1>
+  <p class="body-text">This document specifies the visual identity for Standard House Partners, including the wordmark system, colophon, color palette, typography, and applied mockups across the firm's primary surfaces. It serves as the reference for any subsequent design work, whether produced in-house or handed to an outside collaborator.</p>
+
+  <ul class="toc-list mt-32">
+    <li class="toc-item">
+      <span class="toc-num">I.</span>
+      <span class="toc-name">Wordmark</span>
+      <span class="toc-desc">Horizontal lockup, scales, usage rules</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">II.</span>
+      <span class="toc-name">Colophon</span>
+      <span class="toc-desc">The § as primary brand mark</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">III.</span>
+      <span class="toc-name">Color Palette</span>
+      <span class="toc-desc">Ink, red, ivory, and risk indicators</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">IV.</span>
+      <span class="toc-name">Typography</span>
+      <span class="toc-desc">Three roles, one serif, one sans</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">V.</span>
+      <span class="toc-name">Report Cover</span>
+      <span class="toc-desc">The flagship deliverable</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VI.</span>
+      <span class="toc-name">Stationery</span>
+      <span class="toc-desc">Business card system</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VII.</span>
+      <span class="toc-name">Website</span>
+      <span class="toc-desc">Homepage hero treatment</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">VIII.</span>
+      <span class="toc-name">Email Signature</span>
+      <span class="toc-desc">Daily correspondence</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">IX.</span>
+      <span class="toc-name">The Standard</span>
+      <span class="toc-desc">Newsletter masthead</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">X.</span>
+      <span class="toc-name">Summary</span>
+      <span class="toc-desc">What this adds up to</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============================== SECTION I: WORDMARK ============================== -->
+<section class="page">
+  <div class="eyebrow">I · Wordmark</div>
+  <h1 class="section-title">The horizontal lockup.</h1>
+  <p class="body-text"><em>The Standard House Partners wordmark is a single line.</em> "Standard House" sits in Source Serif 4 at 400 weight in ink black. "Partners" sits immediately adjacent in the same family at the same weight and size, set in editorial red. No divider, no rule, no italic. The color shift alone carries the typographic gesture &mdash; the firm's classification gets the chromatic accent while its name holds the structural ink. The lockup reads as one composed phrase: a name that includes its own classification.</p>
+
+  <!-- Primary lockup, large -->
+  <div class="wm-stage">
+    <div class="wm-label">Primary lockup &middot; Display size</div>
+    <svg viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 640px;">
+      <text x="360" y="62" text-anchor="middle" font-family="Source Serif 4, serif" font-size="48" font-weight="400" letter-spacing="-0.4"><tspan fill="#0A0A0A">Standard House </tspan><tspan fill="#8B2E2E">Partners</tspan></text>
+    </svg>
+  </div>
+
+  <p class="caption">Display size: used at 48&thinsp;px and above. Optical letter-spacing tightened to &minus;0.4 to match the editorial-publication register. The space between "House" and "Partners" is a single regular word-space &mdash; no extra padding, no kerning intervention.</p>
+
+  <!-- Lockup at scales -->
+  <div class="wm-stage compact">
+    <div class="wm-label">Scale study</div>
+    <div class="wm-row">
+      <div>
+        <svg viewBox="0 0 720 80" xmlns="http://www.w3.org/2000/svg" style="width: 360px;">
+          <text x="360" y="56" text-anchor="middle" font-family="Source Serif 4, serif" font-size="42" font-weight="400" letter-spacing="-0.4"><tspan fill="#0A0A0A">Standard House </tspan><tspan fill="#8B2E2E">Partners</tspan></text>
+        </svg>
+        <div class="wm-size-label">42 PX &middot; HEADER</div>
+      </div>
+      <div>
+        <svg viewBox="0 0 720 80" xmlns="http://www.w3.org/2000/svg" style="width: 240px;">
+          <text x="360" y="56" text-anchor="middle" font-family="Source Serif 4, serif" font-size="42" font-weight="400" letter-spacing="-0.4"><tspan fill="#0A0A0A">Standard House </tspan><tspan fill="#8B2E2E">Partners</tspan></text>
+        </svg>
+        <div class="wm-size-label">28 PX &middot; NAVIGATION</div>
+      </div>
+      <div>
+        <svg viewBox="0 0 720 80" xmlns="http://www.w3.org/2000/svg" style="width: 160px;">
+          <text x="360" y="56" text-anchor="middle" font-family="Source Serif 4, serif" font-size="42" font-weight="400" letter-spacing="-0.4"><tspan fill="#0A0A0A">Standard House </tspan><tspan fill="#8B2E2E">Partners</tspan></text>
+        </svg>
+        <div class="wm-size-label">18 PX &middot; MINIMUM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reversed wordmark -->
+  <div class="wm-stage dark">
+    <div class="wm-label light">Reversed &middot; Dark applications</div>
+    <svg viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 640px;">
+      <text x="360" y="62" text-anchor="middle" font-family="Source Serif 4, serif" font-size="48" font-weight="400" letter-spacing="-0.4"><tspan fill="#F5F1E8">Standard House </tspan><tspan fill="#C95252">Partners</tspan></text>
+    </svg>
+  </div>
+
+  <p class="caption">In reverse, "Standard House" shifts to ivory and "Partners" shifts to lightened red (#C95252) to preserve the chromatic gesture against dark backgrounds while maintaining accessible contrast. Never use the primary red (#8B2E2E) on ink &mdash; it loses too much contrast and reads as a muddy near-monochrome.</p>
+
+  <hr class="rule-faint mt-32">
+
+  <div class="eyebrow-ink mt-32">Usage rules</div>
+  <div style="font-family: var(--body); font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-top: 16px; max-width: 660px;">
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span>Never set the wordmark below 18&thinsp;px. Below this size, the chromatic gesture on "Partners" loses legibility.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span>Never italicize "Partners." The italic was an earlier direction; the locked treatment is the same font, same weight, same size, color shift alone.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span>Never separate the elements with a divider, em-dash, rule, or extra spacing. The lockup is one phrase.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span>Never stack the wordmark vertically. The stacked masthead direction was retired during refinement.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span>Clear space: minimum padding equal to the cap-height of "S" on all four sides.</div>
+  </div>
+</section>
+
+<!-- ============================== SECTION II: COLOPHON ============================== -->
+<section class="page">
+  <div class="eyebrow">II · Colophon</div>
+  <h1 class="section-title">The <span class="red">§</span> as primary mark.</h1>
+  <p class="body-text"><em>The section mark is the firm's distinguishing visual signature.</em> Set in Source Serif 4 in ink black, the § operates as a printer's colophon &mdash; the historical mark that signed a publisher's work product. The firm uses the § structurally inside report pages (§&thinsp;4.1, §&thinsp;4.2) for dimension citations, so the symbol is consistent with the firm's existing visual vocabulary rather than imposed on it. "Standard House" sits beneath the § in editorial red; the small-caps sans label "PARTNERS" sits below in the firm's classification register.</p>
+
+  <!-- Primary colophon -->
+  <div class="wm-stage">
+    <div class="wm-label">Colophon &middot; Full form</div>
+    <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width: 200px;">
+      <text x="140" y="160" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#0A0A0A">§</text>
+      <text x="140" y="208" text-anchor="middle" font-family="Source Serif 4, serif" font-size="22" font-weight="400" fill="#8B2E2E" letter-spacing="0.5">Standard House</text>
+      <text x="140" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="3.2" fill="#0A0A0A">PARTNERS</text>
+    </svg>
+  </div>
+
+  <p class="caption">Three typographic registers, each doing different work: the § as the brand's distinguishing symbol; "Standard House" as the firm's name carrying the chromatic accent; "PARTNERS" as the classification in small-caps sans &mdash; the same register as a publication's masthead credit line.</p>
+
+  <!-- Colophon at scales -->
+  <div class="wm-stage compact">
+    <div class="wm-label">Scale study</div>
+    <div class="wm-row">
+      <div>
+        <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width: 160px;">
+          <text x="140" y="160" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#0A0A0A">§</text>
+          <text x="140" y="208" text-anchor="middle" font-family="Source Serif 4, serif" font-size="22" font-weight="400" fill="#8B2E2E" letter-spacing="0.5">Standard House</text>
+          <text x="140" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="3.2" fill="#0A0A0A">PARTNERS</text>
+        </svg>
+        <div class="wm-size-label">160 PX &middot; FULL</div>
+      </div>
+      <div>
+        <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width: 96px;">
+          <text x="140" y="160" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#0A0A0A">§</text>
+          <text x="140" y="208" text-anchor="middle" font-family="Source Serif 4, serif" font-size="22" font-weight="400" fill="#8B2E2E" letter-spacing="0.5">Standard House</text>
+          <text x="140" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="3.2" fill="#0A0A0A">PARTNERS</text>
+        </svg>
+        <div class="wm-size-label">96 PX &middot; MEDIUM</div>
+      </div>
+      <div>
+        <svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" style="width: 64px;">
+          <text x="140" y="148" text-anchor="middle" font-family="Source Serif 4, serif" font-size="160" font-weight="400" fill="#0A0A0A">§</text>
+          <text x="140" y="194" text-anchor="middle" font-family="Source Serif 4, serif" font-size="20" font-weight="400" fill="#8B2E2E" letter-spacing="0.3">Standard House</text>
+        </svg>
+        <div class="wm-size-label">64 PX &middot; COMPACT</div>
+      </div>
+      <div>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 36px;">
+          <rect x="0" y="0" width="200" height="200" fill="#F5F1E8"/>
+          <text x="100" y="148" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#0A0A0A">§</text>
+        </svg>
+        <div class="wm-size-label">36 PX &middot; FAVICON</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">At compact size, "PARTNERS" drops off &mdash; the colophon retains its full identity through § and "Standard House." At favicon size, only the § survives, which is sufficient: the § alone is recognizable to any returning visitor as the firm's mark.</p>
+
+  <!-- Colophon reversed -->
+  <div class="wm-stage dark">
+    <div class="wm-label light">Reversed &middot; Dark applications</div>
+    <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width: 200px;">
+      <text x="140" y="160" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#F5F1E8">§</text>
+      <text x="140" y="208" text-anchor="middle" font-family="Source Serif 4, serif" font-size="22" font-weight="400" fill="#C95252" letter-spacing="0.5">Standard House</text>
+      <text x="140" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="3.2" fill="#F5F1E8" opacity="0.7">PARTNERS</text>
+    </svg>
+  </div>
+
+  <p class="caption">Reversed treatment: § and PARTNERS shift to ivory, "Standard House" shifts to lightened red to preserve chromatic contrast. The brand's color logic remains intact in dark contexts.</p>
+</section>
+
+<!-- ============================== SECTION III: COLOR ============================== -->
+<section class="page">
+  <div class="eyebrow">III · Color Palette</div>
+  <h1 class="section-title">Ink, red, ivory.</h1>
+  <p class="body-text">The palette is ink black on newsprint ivory, with a single editorial red accent. Color in this brand is not decoration; it is a structural element of the page &mdash; a rule, a drop cap, the chromatic gesture on "Partners," the kicker above a report headline. Most pages will use none of the accent red at all.</p>
+
+  <!-- Primary swatches -->
+  <div class="palette mt-32">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #0A0A0A;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Primary</div>
+        <div class="swatch-name">Ink Black</div>
+        <div class="swatch-hex">#0A0A0A</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #8B2E2E;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Accent</div>
+        <div class="swatch-name">Editorial Red</div>
+        <div class="swatch-hex">#8B2E2E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F5F1E8;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Surface</div>
+        <div class="swatch-name">Newsprint Ivory</div>
+        <div class="swatch-hex">#F5F1E8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support swatches -->
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #1A1A1A;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Body Text</div>
+        <div class="swatch-name">Near-Black</div>
+        <div class="swatch-hex">#1A1A1A</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #FFFFFF; border-bottom: 0.5px solid var(--line);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Interior</div>
+        <div class="swatch-name">True White</div>
+        <div class="swatch-hex">#FFFFFF</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #C95252;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Reverse Accent</div>
+        <div class="swatch-name">Editorial Red — Light</div>
+        <div class="swatch-hex">#C95252</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk indicators -->
+  <div class="eyebrow-ink mt-32">Risk indicator palette</div>
+  <p class="body-text mt-16">The firm's deliverables rate findings on a four-level scale. Each rating has a single canonical color used across reports, summary tables, and presentation materials. The ratings escalate in chromatic intensity from cool to warm to deep.</p>
+
+  <div class="palette mt-24">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #5C6B73;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Risk &middot; Low</div>
+        <div class="swatch-name">Slate</div>
+        <div class="swatch-hex">#5C6B73</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #B8893D;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Risk &middot; Moderate</div>
+        <div class="swatch-name">Editorial Amber</div>
+        <div class="swatch-hex">#B8893D</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #8B2E2E;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Risk &middot; High</div>
+        <div class="swatch-name">Editorial Red</div>
+        <div class="swatch-hex">#8B2E2E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #6B1F1F;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Risk &middot; Critical</div>
+        <div class="swatch-name">Editorial Red — Deep</div>
+        <div class="swatch-hex">#6B1F1F</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #3A3A3A;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Rules &amp; Borders</div>
+        <div class="swatch-name">Charcoal</div>
+        <div class="swatch-hex">#3A3A3A</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #6B6457;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-role">Muted Text</div>
+        <div class="swatch-name">Mute</div>
+        <div class="swatch-hex">#6B6457</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SECTION IV: TYPOGRAPHY ============================== -->
+<section class="page">
+  <div class="eyebrow">IV · Typography</div>
+  <h1 class="section-title">Three roles, one serif, one sans.</h1>
+  <p class="body-text">Source Serif 4 carries the brand. Designed by Frank Grie&szlig;hammer for long-form editorial reading, it operates across display, body, and quotation registers without changing family. Inter supports it for working contexts &mdash; mastheads, captions, navigation, data tables. Both are open-licensed: no commercial licensing costs, no font-loading constraints, no risk of license expiry. The brand is engineered for the work it asks of itself.</p>
+
+  <div class="spec-row mt-32" style="border-top: 0.5px solid var(--line);">
+    <div class="spec-meta">
+      <span class="role">Display</span>
+      <span class="face">Source Serif 4</span>
+      <span>Headlines, wordmark, section titles, drop caps</span>
+    </div>
+    <div>
+      <div class="spec-display">The standard,<br><span class="italic">applied</span>.</div>
+    </div>
+  </div>
+
+  <div class="spec-row">
+    <div class="spec-meta">
+      <span class="role">Body</span>
+      <span class="face">Source Serif 4, 16/26</span>
+      <span>Report body, long-form content, analytical writing</span>
+    </div>
+    <div>
+      <div class="spec-body">
+        <span class="drop">T</span>he Target derives 58&thinsp;% of organic traffic from a single keyword cluster. Two adjacent terms account for the remaining concentration. Under a standard core algorithm update, the firm's modeled exposure is approximately $3.4M in annualised revenue at risk &mdash; rated <strong>High</strong> under the firm's framework.
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-row">
+    <div class="spec-meta">
+      <span class="role">Accent</span>
+      <span class="face">Inter, 11/14</span>
+      <span>Mastheads, captions, data tables, navigation, metadata</span>
+    </div>
+    <div>
+      <div class="spec-caption">
+        <span class="uc">Engagement memorandum &mdash; Section IV</span>
+        PREPARED BY STANDARD HOUSE PARTNERS &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; VOL. III &nbsp;·&nbsp; THE FOLLOWING ANALYSIS IS INTENDED SOLELY FOR THE DEAL TEAM IDENTIFIED ON THE COVER. NOT FOR DISTRIBUTION.
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule-faint mt-32">
+
+  <div class="eyebrow-ink mt-32">Typographic principles</div>
+  <div style="font-family: var(--body); font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-top: 16px; max-width: 660px;">
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span><em>Serif body, sans support.</em> All long-form reading is in Source Serif. Inter appears only in caption, masthead, and data contexts &mdash; never in the body of an argument.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span><em>Drop caps signal section opens.</em> The drop cap appears once per major section, set in editorial red. Never decorative; always at the lead of substantive analysis.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span><em>Italic carries emphasis, not chrome.</em> Italics are used for genuine emphasis or for the firm's classification labels (e.g. "Partner &middot; Founder"). Never for decoration.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span><em>Small caps signal classification.</em> "PARTNERS," section labels in mastheads, and rating tags are all set in Inter small-caps at 0.22&ndash;0.28em letter-spacing.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px; font-family: var(--mono); font-size: 12px;">·</span><em>Mono for numbers and codes.</em> IBM Plex Mono appears in volume numbers, report citations, dates, and any context where alignment of figures matters.</div>
+  </div>
+</section>
+
+<!-- ============================== SECTION V: REPORT COVER ============================== -->
+<section class="page">
+  <div class="eyebrow">V · Applied — Report Cover</div>
+  <h1 class="section-title">The Diligence Report.</h1>
+  <p class="body-text">The Diligence Report is the firm's primary deliverable and the brand's most consequential public artifact. Its cover sets the typographic and chromatic logic that the rest of the report inherits: masthead-style banner, kicker in red, headline in serif at display size, italic subtitle, thin red rule, classification metadata, and a closing footer that carries both the firm's name and its tagline.</p>
+
+  <div class="mock-stage">
+    <div class="report-cover">
+      <div class="rc-mast">
+        <div class="rc-mast-name">Standard House <span class="red">Partners</span></div>
+        <div class="rc-mast-meta">VOL. III &nbsp;·&nbsp; № 047</div>
+      </div>
+      <div class="rc-thin"></div>
+
+      <div class="rc-center">
+        <div class="rc-kicker">Diligence Report &middot; Project Aurora</div>
+        <div class="rc-title">The standard,<br><span class="italic">applied.</span></div>
+        <div class="rc-rule"></div>
+        <div class="rc-subtitle">A marketing diligence analysis of the proposed acquisition of [Target Co.] by [Sponsor Capital Partners].</div>
+
+        <div class="rc-meta">
+          <div><span class="label">Prepared for</span>Sponsor Capital Partners</div>
+          <div><span class="label">Engagement</span>Flagship · 5 business days</div>
+          <div><span class="label">Date</span>March 2026</div>
+          <div><span class="label">Classification</span>Confidential</div>
+        </div>
+      </div>
+
+      <div class="rc-bottom">
+        <div class="rc-bottom-left">Marketing diligence for middle-market acquisitions.</div>
+        <div class="rc-bottom-right">SHP &middot; MMXXVI</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">The report cover sits on newsprint ivory stock. The horizontal wordmark anchors the masthead with "Partners" in editorial red. The tagline doubles as the cover's headline &mdash; "The standard, applied." set in display-size serif with italic emphasis on the verb. Engagement metadata appears in small-caps Inter so the serif headline carries the visual weight alone.</p>
+</section>
+
+<!-- ============================== SECTION VI: STATIONERY ============================== -->
+<section class="page">
+  <div class="eyebrow">VI · Applied — Stationery</div>
+  <h1 class="section-title">Business card.</h1>
+  <p class="body-text">The business card carries the colophon as a corner detail and the partial wordmark ("Standard House" + small-caps PARTNERS) as the firm's classification block. The personal name takes the dominant typographic position &mdash; the firm operates behind the work; the principal in front of it. Two treatments: newsprint ivory for client-facing applications, ink for formal occasions and senior partner cards.</p>
+
+  <div class="card-stage">
+    <div class="bcard">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div style="font-family: var(--display); font-size: 17px; font-weight: 500; color: var(--ink); line-height: 1.1;">Nicholas Valiton</div>
+          <div style="font-family: var(--display); font-style: italic; font-size: 12px; color: var(--ink-soft); margin-top: 1px;">Partner &middot; Founder</div>
+        </div>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 42px;">
+          <text x="100" y="148" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#0A0A0A">§</text>
+        </svg>
+      </div>
+      <div style="border-top: 0.5px solid var(--ink); padding-top: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+          <div style="font-family: var(--sans); font-size: 9px; line-height: 1.6; color: var(--ink-soft);">
+            nick@standardhousepartners.com<br>
+            +1 617 555 0142
+          </div>
+          <div style="text-align: right;">
+            <div style="font-family: var(--display); font-size: 11px; color: var(--red); line-height: 1;">Standard House</div>
+            <div style="font-family: var(--sans); font-size: 7px; font-weight: 700; letter-spacing: 0.28em; color: var(--ink); margin-top: 2px;">PARTNERS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bcard dark">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div style="font-family: var(--display); font-size: 17px; font-weight: 500; color: var(--ivory); line-height: 1.1;">Nicholas Valiton</div>
+          <div style="font-family: var(--display); font-style: italic; font-size: 12px; color: var(--ivory); opacity: 0.75; margin-top: 1px;">Partner &middot; Founder</div>
+        </div>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 42px;">
+          <text x="100" y="148" text-anchor="middle" font-family="Source Serif 4, serif" font-size="180" font-weight="400" fill="#F5F1E8">§</text>
+        </svg>
+      </div>
+      <div style="border-top: 0.5px solid var(--ivory); padding-top: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+          <div style="font-family: var(--sans); font-size: 9px; line-height: 1.6; color: var(--ivory); opacity: 0.75;">
+            nick@standardhousepartners.com<br>
+            +1 617 555 0142
+          </div>
+          <div style="text-align: right;">
+            <div style="font-family: var(--display); font-size: 11px; color: #C95252; line-height: 1;">Standard House</div>
+            <div style="font-family: var(--sans); font-size: 7px; font-weight: 700; letter-spacing: 0.28em; color: var(--ivory); margin-top: 2px;">PARTNERS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Specifications: 3.5 &times; 2 inches, 18&thinsp;pt cotton stock or equivalent, single-sided. The § colophon should be printed in matching ink rather than embossed &mdash; embossing competes for visual attention with the serif name. For senior partner cards, consider deboss on the back side with the colophon alone.</p>
+</section>
+
+<!-- ============================== SECTION VII: WEBSITE ============================== -->
+<section class="page">
+  <div class="eyebrow">VII · Applied — Website</div>
+  <h1 class="section-title">Homepage hero.</h1>
+  <p class="body-text">The website carries the same editorial logic as the report. Newsprint ivory background, a hard masthead rule under the navigation, serif headline at 56&thinsp;px, italic subtitle, two CTAs &mdash; primary in ink, secondary as an underlined link. The horizontal wordmark sits in the navigation at 22&thinsp;px so "Partners" reads cleanly in red against the navigation bar.</p>
+
+  <div class="web-stage">
+    <div class="web-browser">
+      <div class="web-dots"><span class="web-dot"></span><span class="web-dot"></span><span class="web-dot"></span></div>
+      <div class="web-url">standardhousepartners.com</div>
+    </div>
+    <div class="web-page">
+      <div class="web-nav">
+        <div class="web-brand">Standard House <span class="red">Partners</span></div>
+        <div class="web-menu">
+          <span>The firm</span>
+          <span>Engagements</span>
+          <span>The Standard</span>
+        </div>
+        <button class="web-cta">Request a brief</button>
+      </div>
+
+      <div class="web-hero">
+        <div class="web-eyebrow">Marketing diligence &middot; Middle market</div>
+        <h1 class="web-headline">The standard,<br><span class="italic">applied.</span></h1>
+        <p class="web-sub">Marketing due diligence for middle-market acquisitions in the $10M to $100M deal range. Five dimensions. Risk-rated. Delivered on deal timelines.</p>
+        <div class="web-actions">
+          <button class="web-btn-primary">Request a brief</button>
+          <span class="web-btn-secondary">View a sample report</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption">Note the deliberate use of "Request a brief" &mdash; language drawn from editorial and architectural practice rather than from sales ("Get in touch," "Talk to us"). The brand's posture toward the prospect is procedural: there is a brief, the firm responds to it.</p>
+</section>
+
+<!-- ============================== SECTION VIII: EMAIL ============================== -->
+<section class="page">
+  <div class="eyebrow">VIII · Applied — Email Signature</div>
+  <h1 class="section-title">Correspondence.</h1>
+  <p class="body-text">The email signature is the digital equivalent of the business card. Serif name, italic title, a single red rule, the wordmark in horizontal lockup form, then contact in sans, then the tagline in italic serif as a soft closing line. HTML signatures should be tested across Gmail, Outlook, and Apple Mail to ensure font fallbacks behave; web-safe Georgia is the acceptable substitute when Source Serif 4 is unavailable.</p>
+
+  <div class="sig-stage">
+    <div class="sig">
+      <div style="font-family: var(--display); font-size: 14px; color: var(--ink); margin-bottom: 18px;">
+        Best,
+      </div>
+      <div class="sig-name">Nicholas Valiton</div>
+      <div class="sig-title">Partner &middot; Founder</div>
+      <div class="sig-rule"></div>
+      <div class="sig-firm">Standard House <span class="red">Partners</span></div>
+      <div class="sig-contact">
+        standardhousepartners.com &nbsp;·&nbsp; +1 617 555 0142
+      </div>
+      <div class="sig-tag">"The standard, applied."</div>
+    </div>
+  </div>
+
+  <p class="caption">The signature is approximately 220&thinsp;px wide rendered &mdash; the same width as a typical email body column. The horizontal lockup at 16&thinsp;px is the smallest size the wordmark should appear; below this, the chromatic gesture on "Partners" can degrade in some email clients. Test before locking the signature for the firm.</p>
+</section>
+
+<!-- ============================== SECTION IX: NEWSLETTER ============================== -->
+<section class="page">
+  <div class="eyebrow">IX · Applied — The Standard</div>
+  <h1 class="section-title">Newsletter masthead.</h1>
+  <p class="body-text"><em>The Standard</em> is the firm's monthly newsletter. The name doubles as a promise: each issue applies the firm's standard to a single recent deal, channel risk, or market development. The masthead carries the full editorial-publication treatment &mdash; the firm's name and issue metadata above a hard rule, the title set at 88&thinsp;px in display serif, an italic deck below, and a double rule before the lead article. This is the brand at its most ceremonial register.</p>
+
+  <div class="nl-stage">
+    <div class="nl-top">
+      <div class="nl-eyebrow">From Standard House Partners &middot; Issue No. 003</div>
+      <div class="nl-meta">MARCH MMXXVI</div>
+    </div>
+    <div class="nl-thin"></div>
+
+    <h1 class="nl-title">The <span class="italic" style="color: #8B2E2E;">Standard</span></h1>
+    <div class="nl-sub">A monthly review of marketing risk in middle-market M&amp;A.</div>
+
+    <hr class="nl-rule">
+
+    <div class="nl-deck">"When a single keyword cluster carries half a target company's traffic, the diligence question is not whether the risk exists. The question is whether the buyer has priced it."</div>
+  </div>
+
+  <p class="caption">The newsletter masthead inverts the wordmark's color logic: in <em>The Standard</em>, the word "Standard" itself carries the red and the italic &mdash; reading the title as both the name of the publication and a chromatic reinforcement of the brand's central premise. The deck below introduces the lead article in a single quoted sentence, set in italic display serif.</p>
+</section>
+
+<!-- ============================== SECTION X: SUMMARY ============================== -->
+<section class="page">
+  <div class="eyebrow">X · Summary</div>
+  <h1 class="section-title">What this adds up to.</h1>
+
+  <div class="summary-box mt-24">
+    <div class="summary-body">A firm that operates as if it is the reference. Editorial, typographic, restrained. Built around a single discipline. The visual world reinforces the institutional voice: every element does work, nothing is decorative, and the firm appears most credible when it performs least.</div>
+    <div class="summary-footer">
+      <div>
+        <svg viewBox="0 0 720 80" xmlns="http://www.w3.org/2000/svg" style="width: 280px;">
+          <text x="20" y="56" font-family="Source Serif 4, serif" font-size="36" font-weight="400" letter-spacing="-0.4"><tspan fill="#0A0A0A">Standard House </tspan><tspan fill="#8B2E2E">Partners</tspan></text>
+        </svg>
+      </div>
+      <div class="summary-meta">Visual Direction &middot; V1 &middot; Internal</div>
+    </div>
+  </div>
+
+  <hr class="rule-faint mt-32">
+
+  <div class="eyebrow mt-32">Brand Principles</div>
+  <div style="font-family: var(--body); font-size: 16px; line-height: 1.8; padding-left: 0; list-style: none; margin-top: 16px;">
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px;">·</span><em>Restraint signals confidence.</em> The firms that need to over-design are the firms without institutional weight. Standard House Partners' substance comes from operating as if it doesn't need to perform anything.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px;">·</span><em>The lockup is one phrase.</em> "Standard House" and "Partners" sit adjacent, no divider, no extra spacing, no italic. The color shift on "Partners" carries the entire typographic gesture.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px;">·</span><em>The § is structural, not decorative.</em> Every appearance of the section mark does work &mdash; as the colophon, as a citation mark inside reports (§&thinsp;4.1, §&thinsp;4.2), as the closing mark of formal documents. It is the brand's punctuation.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px;">·</span><em>Serif typography carries the institutional voice.</em> No sans-serif appears in display or body contexts. The brand reads the way an editorial publication reads &mdash; with discipline, hierarchy, and restraint.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px;">·</span><em>One accent, used sparingly.</em> Editorial red appears at most once per page. It is structural, never decorative. The brand's chromatic discipline is its primary visible commitment.</div>
+    <div style="padding: 6px 0;"><span style="color: var(--red); margin-right: 12px;">·</span><em>The firm operates behind the work.</em> No founders pictured. No personalities promoted. The work product is the brand's voice.</div>
+  </div>
+
+  <hr class="rule-double mt-32">
+
+  <div class="text-center mt-32">
+    <div class="cover-tagline" style="margin-bottom: 24px; font-style: italic;">The standard, applied.</div>
+    <div class="cover-footer-block" style="opacity: 0.7;">
+      End of Visual Direction Document<br>
+      Version 1.0 &middot; May 2026
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
